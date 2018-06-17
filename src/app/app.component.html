@@ -1,20 +1,27 @@
 <button (click)="dec()">
-    Remove tab
+  Remove tab
 </button>
 <button (click)="inc()">
-    Add tab
+  Add tab
 </button>
 
 <br>
 
-<tabs>
-  <tab *ngFor="let tab of tabs">
+
+<tabs class="tabs__titles">
+  <tab *ngFor="let tab of tabs" [tab]="tab">
+
     <tab-title>
       Tab <b>{{ tab }}</b> title
     </tab-title>
+
     <tab-content>
-      Tab <b>{{ tab }}</b> content
+      <br>
+      Tab <b>{{tab}}</b> content
       <test [tab]="tab"></test>
+      <br>
     </tab-content>
+
   </tab>
+
 </tabs>
